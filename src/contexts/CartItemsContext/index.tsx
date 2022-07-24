@@ -5,10 +5,15 @@ import {
   CartState,
 } from '~/reducers/cartItemsReducer/cartItemsReducer';
 
-export type Item = {
+export type Fruit = {
   id: string;
   name: string;
   imgUrl: string;
+};
+
+export type Item = {
+  fruit: Fruit;
+  quantity: number;
 };
 
 const initialState: CartState = {

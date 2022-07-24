@@ -1,9 +1,15 @@
-import { Item } from '~/contexts/CartItemsContext';
+import { Fruit, Item } from '~/contexts/CartItemsContext';
 
 export enum CartActionsType {
   ADD_TO_CART = 'ADD_TO_CART',
   REMOVE_FROM_CART = 'REMOVE_FROM_CART',
+  UPDATE_ITEM_QUANTITY = 'UPDATE_ITEM_QUANTITY',
 }
+
+export type UpdateQuantityPayload = {
+  id: Fruit['id'];
+  quantity: number;
+};
 
 export type CartActions =
   | {
@@ -12,7 +18,11 @@ export type CartActions =
     }
   | {
       type: CartActionsType.REMOVE_FROM_CART;
-      payload: Item['id'];
+      payload: Fruit['id'];
+    }
+  | {
+      type: CartActionsType.UPDATE_ITEM_QUANTITY;
+      payload: UpdateQuantityPayload;
     };
 
 export type CartState = {
@@ -24,7 +34,15 @@ export const cartItemsReducer = (state: CartState, action: CartActions): CartSta
     case CartActionsType.ADD_TO_CART:
       return { items: [...state.items, action.payload] };
     case CartActionsType.REMOVE_FROM_CART:
-      return { items: [...state.items.filter((item) => item.id !== action.payload)] };
+      return { items: state.items.filter((item) => item.fruit.id !== action.payload) };
+    case CartActionsType.UPDATE_ITEM_QUANTITY:
+      return {
+        items: state.items.map((item) =>
+          item.fruit.id === action.payload.id
+            ? { fruit: item.fruit, quantity: action.payload.quantity }
+            : item,
+        ),
+      };
     default:
       return state;
   }

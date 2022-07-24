@@ -4,9 +4,12 @@ import { useCartContext } from './useCartContext';
 
 describe('Hooks: useCartContext', () => {
   const item = {
-    id: 'maca',
-    name: 'Maçã',
-    imgUrl: '',
+    fruit: {
+      id: 'maca',
+      name: 'Maçã',
+      imgUrl: '',
+    },
+    quantity: 1,
   };
 
   it('should add a item into items array', () => {
@@ -30,5 +33,18 @@ describe('Hooks: useCartContext', () => {
     result.current.removeFromCart(itemId);
 
     expect(result.current.items).toEqual([]);
+  });
+
+  it('should update quantity', () => {
+    const wrapper = CartItemsProvider;
+    const { result } = renderHook(useCartContext, { wrapper });
+
+    result.current.addToCart(item);
+
+    const itemId = 'maca';
+
+    result.current.updateQuantity({ id: itemId, quantity: 20 });
+
+    expect(result.current.items).toEqual([{ ...item, quantity: 20 }]);
   });
 });
