@@ -14,6 +14,7 @@ export default defineConfig({
       _: '/resources/ts',
     },
   },
+  // @ts-ignore
   test: {
     globals: true,
     environment: 'jsdom',
