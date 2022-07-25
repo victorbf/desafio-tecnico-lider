@@ -1,13 +1,12 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { BrowserRouter } from 'react-router-dom';
+import { CartItemsProvider } from './contexts/CartItemsContext';
 import App from './App';
 
-// styles
-import './index.css';
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <CartItemsProvider>
+      <App />
+    </CartItemsProvider>
+  </BrowserRouter>,
 );
