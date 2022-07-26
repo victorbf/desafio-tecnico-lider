@@ -80,3 +80,6 @@ describe('Commponent: Header', () => {
     expect(updateCartItemsTotal).toBeInTheDocument();
   });
 });
+
+// TODO: TEST LINK ROUTE
+// TODO: TEST DISPLAY NONE

@@ -1,5 +1,12 @@
+import { ShoppingCart, SignOut } from 'phosphor-react';
 import { useCartContext } from '~/hooks/useCartContext/useCartContext';
-import { HeaderContainer, HeaderTitle, HeaderLogoutButton, HeaderCartLink } from './style';
+import {
+  HeaderContainer,
+  HeaderTitle,
+  HeaderRightContent,
+  HeaderLogoutButton,
+  HeaderCartLink,
+} from './style';
 
 const Header = () => {
   const { items } = useCartContext();
@@ -7,15 +14,19 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <HeaderTitle>Olá, usuário!</HeaderTitle>
-      <HeaderLogoutButton
-        type='button'
-        title='logout'
-        onClick={() => localStorage.removeItem('isAuthenticated')}
-      >
-        ICON
-      </HeaderLogoutButton>
-      <HeaderCartLink to='/cart'>ICON {itemsTotal}</HeaderCartLink>
+      <HeaderTitle to='/'>Olá, usuário!</HeaderTitle>
+      <HeaderRightContent>
+        <HeaderLogoutButton
+          type='button'
+          title='logout'
+          onClick={() => localStorage.removeItem('isAuthenticated')}
+        >
+          <SignOut size={24} />
+        </HeaderLogoutButton>
+        <HeaderCartLink to='/cart'>
+          <ShoppingCart size={24} /> {itemsTotal}
+        </HeaderCartLink>
+      </HeaderRightContent>
     </HeaderContainer>
   );
 };
