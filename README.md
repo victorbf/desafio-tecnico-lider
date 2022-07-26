@@ -15,7 +15,7 @@ Projeto dedicado a empresa [líder](https://www.lideraviacao.com.br/pt-br/pagina
 
 - **Outros comandos!**
 
-> ``yarn build` para buildar a aplicação
+> `yarn build` para buildar a aplicação
 > `yarn lint` para rodar eslint na aplicação
 > `yarn lint:fix` para corrigir erros de lint na aplicação
 > `yarn prettier` para rodar prettier na aplicação
