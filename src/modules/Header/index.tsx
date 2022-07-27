@@ -1,4 +1,5 @@
 import { ShoppingCart, SignOut } from 'phosphor-react';
+import { useNavigate } from 'react-router-dom';
 import { useCartContext } from '~/hooks/useCartContext/useCartContext';
 import {
   HeaderContainer,
@@ -10,6 +11,7 @@ import {
 
 const Header = () => {
   const { items } = useCartContext();
+  const navigate = useNavigate();
   const itemsTotal = items.length;
 
   return (
@@ -19,7 +21,10 @@ const Header = () => {
         <HeaderLogoutButton
           type='button'
           title='logout'
-          onClick={() => localStorage.removeItem('isAuthenticated')}
+          onClick={() => {
+            localStorage.removeItem('isAuthenticated');
+            navigate('/login');
+          }}
         >
           <SignOut size={24} />
         </HeaderLogoutButton>

@@ -18,7 +18,6 @@ export const HeaderTitle = styled(Link)`
 `;
 
 export const HeaderLogoutButton = styled.button`
-  font-size: 1.5rem;
   background: transparent;
   display: flex;
   align-items: center;
@@ -30,7 +29,7 @@ export const HeaderCartLink = styled(Link)`
   display: none;
 
   @media ${MediaQuery.MD} {
-    font-size: 1.5rem;
+    ${Title};
     display: flex;
     align-items: center;
     margin-left: 8px;

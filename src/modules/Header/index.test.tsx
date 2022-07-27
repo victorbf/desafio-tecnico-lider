@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { PropsWithChildren } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { vi } from 'vitest';
@@ -25,29 +24,13 @@ describe('Commponent: Header', () => {
     expect(title).toBeInTheDocument();
   });
 
-  it('should call localStorage when click on logout', async () => {
-    useCartContextMocked.mockReturnValueOnce({ items: [] } as any);
-
-    const removeItem = vi.spyOn(Storage.prototype, 'removeItem');
-
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>,
-    );
-
-    const logoutButton = screen.getByTitle('logout');
-    await userEvent.click(logoutButton);
-
-    expect(removeItem).toHaveBeenCalled();
-  });
-
   it('should update items length in cart icon', () => {
     const item = {
       fruit: {
         id: 'banana',
         name: 'Banana',
         imgUrl: '',
+        description: '',
       },
       quantity: 3,
     };
@@ -80,6 +63,3 @@ describe('Commponent: Header', () => {
     expect(updateCartItemsTotal).toBeInTheDocument();
   });
 });
-
-// TODO: TEST LINK ROUTE
-// TODO: TEST DISPLAY NONE
