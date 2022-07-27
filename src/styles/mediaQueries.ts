@@ -2,7 +2,7 @@ const sizes = {
   xs: 0,
   sm: '600px',
   md: '1024px',
-  lg: '1600px',
+  lg: '1280px',
   xl: '2048px',
 };
 

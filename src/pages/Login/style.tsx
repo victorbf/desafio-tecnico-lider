@@ -17,6 +17,7 @@ export const LoginForm = styled.form`
   max-width: 400px;
   border-radius: 12px;
   padding: 12px;
+  margin-inline: 16px;
 `;
 export const UserInput = styled.input`
   margin-bottom: 8px;

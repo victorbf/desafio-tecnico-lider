@@ -7,34 +7,35 @@ const ContainerMaxWidth = {
   XS: '480px',
   SM: '960px',
   MD: '1280px',
-  LG: '1920px',
-  XL: '3840px',
+  LG: '1424px',
+  XL: '1824px',
 };
 
 export const DefaultContainer = css`
   max-width: ${ContainerMaxWidth.XS};
   padding: 0 16px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   position: relative;
   padding-bottom: ${bottomNavigationHeight}px;
 
   @media ${MediaQuery.SM} {
     max-width: ${ContainerMaxWidth.SM};
+    padding-right: 24px;
+    padding-left: 24px;
   }
 
   @media ${MediaQuery.MD} {
     max-width: ${ContainerMaxWidth.MD};
-    padding-bottom: 0;
+    padding: 0 24px;
   }
 
   @media ${MediaQuery.LG} {
     max-width: ${ContainerMaxWidth.LG};
-    padding-bottom: 0;
+    padding: 0 32px;
   }
 
   @media ${MediaQuery.XL} {
     max-width: ${ContainerMaxWidth.XL};
-    padding-bottom: 0;
+    padding-bottom: 0 32px;
   }
 `;
