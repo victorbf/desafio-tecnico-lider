@@ -2,12 +2,13 @@ import { renderHook } from '@testing-library/react-hooks';
 import { CartItemsProvider } from '~/contexts/CartItemsContext';
 import { useCartContext } from './useCartContext';
 
-describe('Hooks: useCartContext', () => {
+describe('Hook: useCartContext', () => {
   const item = {
     fruit: {
       id: 'maca',
       name: 'Maçã',
       imgUrl: '',
+      description: '',
     },
     quantity: 1,
   };
