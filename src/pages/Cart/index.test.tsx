@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
 import { vi } from 'vitest';
 import { CartItemsProvider } from '~/contexts/CartItemsContext';
 import { useCartContext } from '~/hooks/useCartContext/useCartContext';
@@ -35,9 +36,11 @@ describe('Module: Cart', () => {
     useCartContextMocked.mockReturnValueOnce({ items } as any);
 
     render(
-      <CartItemsProvider>
-        <Cart />
-      </CartItemsProvider>,
+      <BrowserRouter>
+        <CartItemsProvider>
+          <Cart />
+        </CartItemsProvider>
+      </BrowserRouter>,
     );
     const itemsList = screen.getAllByRole('listitem');
     expect(itemsList.length).toBe(2);
@@ -47,9 +50,11 @@ describe('Module: Cart', () => {
     useCartContextMocked.mockReturnValueOnce({ items: [] } as any);
 
     render(
-      <CartItemsProvider>
-        <Cart />
-      </CartItemsProvider>,
+      <BrowserRouter>
+        <CartItemsProvider>
+          <Cart />
+        </CartItemsProvider>
+      </BrowserRouter>,
     );
     const emptyState = screen.getByText(
       'Opa, infelizmente não tem nenhuma fruta adicionada no carrinho',
@@ -64,9 +69,11 @@ describe('Module: Cart', () => {
     useCartContextMocked.mockReturnValueOnce({ items, removeFromCart } as any);
 
     render(
-      <CartItemsProvider>
-        <Cart />
-      </CartItemsProvider>,
+      <BrowserRouter>
+        <CartItemsProvider>
+          <Cart />
+        </CartItemsProvider>
+      </BrowserRouter>,
     );
 
     const cardItem = screen.getByText('Banana');
