@@ -1,0 +1,32 @@
+[
+  {
+    "id": "maca",
+    "name": "Maçã",
+    "imgUrl": "https://static-images.ifood.com.br/image/upload/t_high/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202204131222_dvgk24kekki.jpg",
+    "description": "A maçã é uma boa fonte de vitaminas B1, B2, Niacina e sais minerais, como Fósforo e Ferro."
+  },
+  {
+    "id": "banana",
+    "name": "Banana",
+    "imgUrl": "https://static-images.ifood.com.br/image/upload/t_high/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202206191220_v9gbih0ljyl.jpg",
+    "description": "A banana é uma fruta rica em fibras, potássio, vitaminas C e A."
+  },
+  {
+    "id": "pera",
+    "name": "Pêra",
+    "imgUrl": "https://static-images.ifood.com.br/image/upload/t_high/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202203091813_k1j4mrprmxq.jpg",
+    "description": "A fruta é rica em magnésio, fósforo, selênio, fibras, vitaminas A, C e do complexo B."
+  },
+  {
+    "id": "abacaxi",
+    "name": "Abacaxi",
+    "imgUrl": "https://static-images.ifood.com.br/image/upload/t_medium/pratos/88898f6d-c7cd-46ac-8dac-c7d0b49b3f63/202003181433_w2bI_a.png",
+    "description": "O abacaxi é considerado um alimento diurético."
+  },
+  {
+    "id": "manga",
+    "name": "Manga",
+    "imgUrl": "https://static-images.ifood.com.br/image/upload/t_medium/pratos/95dcec30-a6da-43d5-a7f2-4be84611df81/202204221830_ORDO_i.jpg",
+    "description": "A manga contém antioxidantes e fibras solúveis."
+  }
+]
