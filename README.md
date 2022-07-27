@@ -21,7 +21,6 @@ Projeto dedicado a empresa [líder](https://www.lideraviacao.com.br/pt-br/pagina
 - `yarn prettier` para rodar prettier na aplicação
 - `yarn prettier:fix` para corrigir qualquer erro de Prettier na aplicação
 - `yarn test` para rodar os testes da aplicação
-- `yarn storybook` para conseguir visualizar os componentes de aplicação pelo storybook!
 
 ## Bibliotecas utilizadas
 
